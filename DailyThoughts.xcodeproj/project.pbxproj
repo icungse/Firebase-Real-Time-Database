@@ -21,6 +21,7 @@
 		88F25CEF273EE56D00881EDC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 88F25CEE273EE56D00881EDC /* FirebaseAuth */; };
 		88F25CF1273EE56D00881EDC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 88F25CF0273EE56D00881EDC /* FirebaseDatabase */; };
 		88F25CF72743F5BF00881EDC /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F25CF62743F5BF00881EDC /* AuthenticationModel.swift */; };
+		FE55616B2A4C591C00C91280 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE55616A2A4C591C00C91280 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		88C32672273045DA00AC914F /* ThoughtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtView.swift; sourceTree = "<group>"; };
 		88C32677273052AD00AC914F /* CompositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionView.swift; sourceTree = "<group>"; };
 		88F25CF62743F5BF00881EDC /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		FE55616A2A4C591C00C91280 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				18D775C622AD944400AE281E /* Assets.xcassets */,
 				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
 				18D775CE22AD944400AE281E /* Info.plist */,
+				FE55616A2A4C591C00C91280 /* GoogleService-Info.plist */,
 				18D775C822AD944400AE281E /* Preview Content */,
 			);
 			path = DailyThoughts;
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */,
+				FE55616B2A4C591C00C91280 /* GoogleService-Info.plist in Resources */,
 				18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */,
 				18D775C722AD944400AE281E /* Assets.xcassets in Resources */,
 			);
