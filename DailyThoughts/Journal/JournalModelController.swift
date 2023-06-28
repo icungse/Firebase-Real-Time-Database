@@ -38,6 +38,8 @@ final class JournalModelController: ObservableObject {
   @Published var thoughts: [ThoughtModel] = []
   @Published var newThoughtText: String = ""
   
+  private let decoder = JSONDecoder()
+  
   private lazy var databasePath: DatabaseReference? = {
     guard let uid = Auth.auth().currentUser?.uid else {
       return nil
@@ -52,9 +54,36 @@ final class JournalModelController: ObservableObject {
   
   private let encoder = JSONEncoder()
 
-  func listenForThoughts() {}
+  func listenForThoughts() {
+    guard let databasePath = databasePath else {
+      return
+    }
 
-  func stopListening() {}
+    databasePath
+      .observe(.childAdded) { [weak self] snapshot in
+        guard
+          let self = self,
+          var json = snapshot.value as? [String: Any]
+        else {
+          return
+        }
+        
+        json["id"] = snapshot.key
+
+        do {
+          let thoughtData = try JSONSerialization.data(withJSONObject: json)
+          let thought = try self.decoder.decode(ThoughtModel.self, from: thoughtData)
+          self.thoughts.append(thought)
+        } catch {
+          print("an error occurred", error)
+        }
+      }
+
+  }
+
+  func stopListening() {
+    databasePath?.removeAllObservers()
+  }
 
   func postThought() {
     guard let databasePath = databasePath else {
